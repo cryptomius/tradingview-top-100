@@ -19,7 +19,7 @@ var pairing = prompt('What pairing would you like? USD / BTC', 'USD') || 'USD';
   pairs = pairsText.join(',');
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(pairs));
-  element.setAttribute('download', 'Top 100 (' + todayDate + ').txt');
+  element.setAttribute('download', 'Top 100 ' + pairing + ' (' + todayDate + ').txt');
   element.style.display = 'none';
   document.body.appendChild(element);
   element.click();
