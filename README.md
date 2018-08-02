@@ -1,9 +1,9 @@
 ## TradingView top 100 cryptocurrencies watchlist creator
-This [script](https://raw.githubusercontent.com/cryptomius/tragdingview-top-100/master/tradingview-top-100.js) automatically extracts the top 100 cryptocurrency symbols traded against USD or BTC. You can then import this as a watchlist into TradingView.com.
+This [script](https://cdn.rawgit.com/cryptomius/tragdingview-top-100/master/tradingview-top-100.js) automatically extracts the top 100 cryptocurrency symbols traded against USD or BTC. You can then import this as a watchlist into TradingView.com.
 
 Setup:
 
-1. [The code](https://raw.githubusercontent.com/cryptomius/tragdingview-top-100/master/tradingview-top-100.js) needs to be converted into a bookmarklet so you can access it from your browser bookmarks. 
+1. [The code](https://cdn.rawgit.com/cryptomius/tragdingview-top-100/master/tradingview-top-100.js) needs to be converted into a bookmarklet so you can access it from your browser bookmarks. 
 Go to [mrcoles.com/bookmarklet](https://mrcoles.com/bookmarklet/), paste the code where it says ‘Enter your javascript code here:’, click ‘Convert to bookmarklet’. Copy the code from where it says ‘and here is the code:’.
 2. Go to your web browser Bookmark Manager and add a new bookmark. Paste the code you just copied into the ‘URL’ field, and name the bookmark (I’ve called it 'TV 100’). I’d recommend placing the bookmark on your ‘Bookmarks Bar’ for easy access.
 
