@@ -15,7 +15,9 @@ var exchange = prompt('Which exchange would you like? i.e. BITFINEX or leave bla
   var todayDate = new Date().toISOString().slice(0,10);
   var pairs=''; 
   content.data.forEach(function(element){
-    pairsText.push(element.s);
+    if(element.d[0]!=pairing){ 
+      pairsText.push(element.s);
+    }
   });
   pairs = pairsText.join(',');
   var element = document.createElement('a');
