@@ -1,4 +1,4 @@
-var pairing = prompt('What pairing would you like? USD / BTC', 'USD') || 'USD';
+var pairing = prompt('What pairing would you like? USD / BTC / ETH', 'USD') || 'USD';
 var exchange = prompt('Which exchange would you like? i.e. BITFINEX or leave blank', '') || '';
 
 (async () => {
@@ -8,7 +8,7 @@ var exchange = prompt('Which exchange would you like? i.e. BITFINEX or leave bla
       'Accept': 'text/plain, */*; q=0.01',
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     },
-    body: JSON.stringify({"filter":[{"left":"market_cap_calc","operation":"nempty"},{"left":"sector","operation":"nempty"},{"left":"name","operation":"match","right":pairing+"$"},{"left":"exchange","operation":"match","right":exchange.toUpperCase().trim()}],"symbols":{"query":{"types":[]},"tickers":[]},"columns":["crypto_code","sector","market_cap_calc","market_cap_diluted_calc","close","total_shares_outstanding","total_shares_diluted","total_value_traded","change","pricescale","minmov","fractional","minmove2"],"sort":{"sortBy":"market_cap_calc","sortOrder":"desc"},"options":{"lang":"en"},"range":[0,100]})
+    body: JSON.stringify({"filter":[{"left":"name","operation":"nempty"},{"left":"exchange","operation":"equal","right":exchange.toUpperCase().trim()},{"left":"volume","operation":"egreater","right":100000},{"left":"name,description","operation":"match","right":pairing+"$"}],"symbols":{"query":{"types":[]},"tickers":[]},"columns":["name","volume","exchange","description","name","subtype"],"sort":{"sortBy":"market_cap_calc","sortOrder":"desc"},"options":{"lang":"en"},"range":[0,100]} )
   });
   const content = await rawResponse.json();
   var pairsText = [];

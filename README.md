@@ -1,5 +1,5 @@
 ## TradingView top 100 cryptocurrencies watchlist creator
-This [script](https://raw.githubusercontent.com/cryptomius/tradingview-top-100/master/tradingview-top-100.js) automatically extracts the top 100 cryptocurrency symbols traded against USD or BTC. You can then import this as a watchlist into TradingView.com.
+This [script](https://raw.githubusercontent.com/cryptomius/tradingview-top-100/master/tradingview-top-100.js) automatically extracts the top 100 cryptocurrency symbols traded against USD, BTC, ETH, or other pairings. You can then import this as a watchlist into TradingView.com.
 
 Setup:
 
@@ -26,4 +26,3 @@ Check out my other repositories for exchange-specific trading pair watchlist cre
 **LTC**: LdEu42hZUUSxxZboXGdes1snQfwrR7VWt3  
 **DASH**: XnU3c743iqpros4YQgfsn9Nxq6T9bguH8e  
 **ZEC**: t1gLKiEZP9RyKtHthvYi2Vo97fvJXL7YcMd  
-**BCH**: 1H9dSN6nsoGDCG4GvPgCWRjP765kqJSXYN
