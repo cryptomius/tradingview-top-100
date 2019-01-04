@@ -2,13 +2,15 @@ var pairing = prompt('What pairing would you like? USD / BTC / ETH', 'USD') || '
 var exchange = prompt('Which exchange would you like? i.e. BITFINEX or leave blank', '') || '';
 
 (async () => {
+  var tvConfig = {"filter":[{"left":"name","operation":"nempty"},{"left":"volume","operation":"egreater","right":100000},{"left":"name,description","operation":"match","right":pairing+"$"}],"symbols":{"query":{"types":[]},"tickers":[]},"columns":["name","volume","exchange","description","name","subtype"],"sort":{"sortBy":"market_cap_calc","sortOrder":"desc"},"options":{"lang":"en"},"range":[0,150]};
+  if (exchange != '') { tvConfig.filter.push({"left":"exchange","operation":"equal","right":exchange.toUpperCase().trim()}); }
   const rawResponse = await fetch('https://scanner.tradingview.com/crypto/scan', {
     method: 'POST',
     headers: {
       'Accept': 'text/plain, */*; q=0.01',
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     },
-    body: JSON.stringify({"filter":[{"left":"name","operation":"nempty"},{"left":"exchange","operation":"equal","right":exchange.toUpperCase().trim()},{"left":"volume","operation":"egreater","right":100000},{"left":"name,description","operation":"match","right":pairing+"$"}],"symbols":{"query":{"types":[]},"tickers":[]},"columns":["name","volume","exchange","description","name","subtype"],"sort":{"sortBy":"market_cap_calc","sortOrder":"desc"},"options":{"lang":"en"},"range":[0,100]} )
+    body: JSON.stringify(tvConfig)
   });
   const content = await rawResponse.json();
   var pairsText = [];
